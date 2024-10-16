@@ -1,0 +1,107 @@
+.workflowSection {
+  padding: 2rem;
+  margin-bottom: 10rem;
+  direction: rtl;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.textContent {
+  flex: 1;
+  max-width: 50%;
+}
+
+.imageContent {
+  flex: 1;
+  max-width: 50%;
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.smallTitle {
+  font-size: 1.2rem;
+  color: var(--text-white-dark);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.mainTitle {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  max-width: 500px;
+}
+
+.description {
+  font-size: 1rem;
+  color: #f5f5f5;
+  margin-bottom: 2rem;
+  background-color: rgba(240, 217, 142, 0.1);
+  border: 1px solid rgba(247, 231, 162, 0.3);
+  border-radius: 8px;
+  max-width: max-content;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.stepsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+}
+
+.stepNumber {
+  background: var(--bg-linear-gradient);
+  color: white;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.stepTitle {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stepDescription {
+  font-size: 0.9rem;
+  color: var(--text-white-dark);
+}
+
+.illustration {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column-reverse;
+  }
+
+  .textContent,
+  .imageContent {
+    max-width: 100%;
+  }
+}

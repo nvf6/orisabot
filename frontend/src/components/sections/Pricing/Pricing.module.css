@@ -1,0 +1,342 @@
+.pricingSection {
+  padding: 6rem 2rem;
+  color: #ffffff;
+  direction: rtl;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.outlineText {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #98d228;
+  position: relative;
+  display: inline-block;
+}
+
+.outlineText::after {
+  content: attr(data-text);
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  -webkit-text-stroke: 5px rgba(152, 210, 40, 0.3);
+  z-index: -1;
+}
+
+.toggleWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  font-size: 1.2rem;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 0 1rem;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--main-color-dark);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  right: 5px;
+  bottom: 4px;
+  background-color: var(--text-white);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider:before {
+  transform: translateX(-24px);
+}
+
+.activeToggle {
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.3s ease;
+}
+
+.inactiveToggle {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s ease;
+}
+
+.plansContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  perspective: 1000px;
+}
+
+.planCard {
+  flex: 0 0 calc(33.33% - 2rem);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: right;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+  transform: rotateY(10deg);
+}
+
+.planCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: rotateY(0deg) scale(1.05);
+}
+
+.planCard::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: rotate(30deg);
+  pointer-events: none;
+}
+
+.popularPlan {
+  transform: rotateY(-10deg) scale(1.05);
+  z-index: 1;
+}
+
+.popularPlan:hover {
+  transform: rotateY(0deg) scale(1.1);
+}
+
+.popularBadge {
+  position: absolute;
+  top: 20px;
+  left: -35px;
+  background: var(--main-color-dark);
+  color: #ffffff;
+  padding: 5px 40px;
+  font-size: 0.9rem;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 10px rgba(152, 210, 40, 0.3);
+}
+
+.planName {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-white);
+}
+
+.planPrice {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.currencySymbol {
+  font-size: 2rem;
+  margin-left: 0.3rem;
+  color: var(--text-white-dark);
+}
+
+.priceAmount {
+  transition: all 0.3s ease;
+}
+
+.pricePeriod {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 0.5rem;
+}
+
+.featuresList {
+  text-align: right;
+  margin-bottom: 2rem;
+}
+
+.featuresList li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.checkmark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--main-color-dark);
+  position: relative;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%) rotate(-45deg);
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+}
+
+.includedFeature {
+  color: #ffffff;
+}
+
+.excludedFeature {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: line-through;
+}
+
+.excludedFeature .checkmark {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.readMore {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.arrow {
+  display: inline-block;
+  margin-right: 5px;
+  transition: transform 0.3s ease;
+}
+
+.readMore:hover .arrow {
+  transform: translateX(-5px);
+}
+
+.subscribeButton {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.premiumButton {
+  background: linear-gradient(90deg, #98d228, #82b023);
+  border: none;
+  color: #ffffff;
+}
+
+.premiumButton:hover {
+  background: linear-gradient(90deg, #82b023, #98d228);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(152, 210, 40, 0.3);
+}
+
+.regularButton {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.regularButton:hover {
+  background: #ffffff;
+  color: var(--bg-color);
+}
+
+.subscribeButton:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(152, 210, 40, 0.3);
+}
+
+.priceChanging {
+  animation: priceChange 0.5s ease-in-out;
+}
+@keyframes priceChange {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotateY(10deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(10deg);
+  }
+  100% {
+    transform: translateY(0px) rotateY(10deg);
+  }
+}
+
+.planCard {
+  animation: float 6s ease-in-out infinite;
+}
+
+.popularPlan {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+@media (max-width: 1024px) {
+  .plansContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .planCard {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 2rem;
+  }
+
+  .popularPlan {
+    transform: scale(1);
+  }
+}

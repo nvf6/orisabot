@@ -1,0 +1,93 @@
+.heroSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+.heroSection::before {
+  content: "ORISABOT";
+  position: absolute;
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 10rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--main-color);
+  opacity: 0.07;
+  z-index: -1;
+}
+
+.bgBlur {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: var(--main-color);
+  filter: blur(100px);
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.mainTitle {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-white);
+}
+
+.outlineText {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--main-color);
+}
+
+.description {
+  max-width: 600px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: var(--text-white-dark);
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.addButton,
+.dashboardButton {
+  outline: none;
+  padding: 6px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addButton {
+  border: 1px dashed var(--main-color-dark);
+  color: var(--text-color);
+}
+
+.dashboardButton {
+  background-color: var(--main-color-dark);
+  color: var(--text-color);
+}
+
+.addButton:hover,
+.dashboardButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--main-color-dark);
+}
+
+.bgBlur {
+  position: absolute;
+  z-index: -1;
+}
+
+.description,
+.buttonContainer {
+  margin-bottom: 2rem;
+}
